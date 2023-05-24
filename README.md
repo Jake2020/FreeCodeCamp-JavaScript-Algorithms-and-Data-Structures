@@ -7,7 +7,7 @@ GitHub Pages Link (for my reference): https://jake2020.github.io/FreeCodeCamp-Ja
 
 1. Palindrome Checker
 2. Roman Numeral Converter
-3. [Caesars Cipher](https://jake2020.github.io/FreeCodeCamp-Front-End-Development-Libraries/RandomQuoteMachine.html/CaesarsCipher.html/)
+3. [Caesars Cipher](https://jake2020.github.io/FreeCodeCamp-JavaScript-Algorithms-and-Data-Structures/CaesarsCipher.html/)
 4. Telephone Number Validator
 5. Cash Register
 
@@ -15,7 +15,7 @@ GitHub Pages Link (for my reference): https://jake2020.github.io/FreeCodeCamp-Ja
 
 ## Project 2: Coming soon
 
-## Project 3: [Caesars Cipher](https://jake2020.github.io/FreeCodeCamp-Front-End-Development-Libraries/RandomQuoteMachine.html/CaesarsCipher.html/)
+## Project 3: [Caesars Cipher](https://jake2020.github.io/FreeCodeCamp-JavaScript-Algorithms-and-Data-Structures/CaesarsCipher.html/)
 A simple webpage to host the JavaScript code I submitted for this project and to allow the user to interact with it for demonstration purposes.
 
 *Note: 3 exaples ciphers are included to decode but the user can use any input text. Might add encoding later but this was not part of the project requirements*
