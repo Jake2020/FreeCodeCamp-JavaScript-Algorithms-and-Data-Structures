@@ -8,7 +8,7 @@ GitHub Pages Link (for my reference): https://jake2020.github.io/FreeCodeCamp-Ja
 ## The following projects/coding challenges were completed to gain this certification:
 
 1. [Palindrome Checker](https://jake2020.github.io/FreeCodeCamp-JavaScript-Algorithms-and-Data-Structures/PalindromeChecker.html)
-2. [Roman Numeral Converter](https://jake2020.github.io/FreeCodeCamp-JavaScript-Algorithms-and-Data-Structures/ConvertToRoman.html)
+2. [Roman Numeral Converter](https://jake2020.github.io/FreeCodeCamp-JavaScript-Algorithms-and-Data-Structures/RomanNumeralConvertor.html)
 3. [Caesars Cipher](https://jake2020.github.io/FreeCodeCamp-JavaScript-Algorithms-and-Data-Structures/CaesarsCipher.html)
 4. Telephone Number Validator
 5. Cash Register
@@ -40,7 +40,7 @@ Expected Outputs:
 - Waiting:palindrome("0_0 (: /-\ :) 0-0") should return true.
 - Waiting:palindrome("five|\_/|four") should return false.
 
-## Project 2: [Roman Numeral Converter](https://jake2020.github.io/FreeCodeCamp-JavaScript-Algorithms-and-Data-Structures/ConvertToRoman.html)
+## Project 2: [Roman Numeral Converter](https://jake2020.github.io/FreeCodeCamp-JavaScript-Algorithms-and-Data-Structures/RomanNumeralConvertor.html)
 
 Problem Description:
 
