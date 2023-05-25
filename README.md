@@ -1,5 +1,7 @@
 # FreeCodeCamp-JavaScript-Algorithms-and-Data-Structures
-Repository to hold my FreeCodeCamp JavaScript Algorithms and Data Structures projects and certificate
+A repository to hold my FreeCodeCamp 'JavaScript Algorithms and Data Structures' projects and certificate.
+
+Each project has been hosted on GitHub pages as a simple interactive and responsive webpage made up of HTML, CSS, JavaScript, and Bootstrap, so the user can test the code as well as read it.
 
 GitHub Pages Link (for my reference): https://jake2020.github.io/FreeCodeCamp-JavaScript-Algorithms-and-Data-Structures/
 
@@ -12,8 +14,6 @@ GitHub Pages Link (for my reference): https://jake2020.github.io/FreeCodeCamp-Ja
 5. Cash Register
 
 ## Project 1: [Palindrome Checker](https://jake2020.github.io/FreeCodeCamp-JavaScript-Algorithms-and-Data-Structures/PalindromeChecker.html)
-A simple webpage to host the JavaScript code I submitted for this project and to allow the user to interact with it for demonstration purposes.
-
 *Note: Example text is provided but any input can be checked*
 
 Problem Description:
@@ -43,8 +43,6 @@ Expected Outputs:
 ## Project 2: Coming soon
 
 ## Project 3: [Caesars Cipher](https://jake2020.github.io/FreeCodeCamp-JavaScript-Algorithms-and-Data-Structures/CaesarsCipher.html)
-A simple webpage to host the JavaScript code I submitted for this project and to allow the user to interact with it for demonstration purposes.
-
 *Note: 3 exaples ciphers are included to decode but the user can use any input text. Might add encoding later but this was not part of the project requirements*
 *Note: If using your own inputs the program only convers UPPERCASE charachters*
 
