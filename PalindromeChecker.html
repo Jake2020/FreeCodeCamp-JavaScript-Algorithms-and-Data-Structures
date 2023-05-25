@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jake's Palindrome Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #c042ad;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            margin-bottom: 5px;
+        }
+
+        .main {
+            background-color: #fdfdfd;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 100%;            
+            display: block;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            background-color: #fdfdfd;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            color: #666;
+            font-size: 15px;
+            line-height: 1.2;
+            margin-bottom: 0.5em;
+            max-width: 100%;
+            overflow: auto;
+            padding: 1em 1.5em;
+            display: block;
+            word-wrap: break-word;
+        }
+
+        #examples {
+            text-align: center;
+        }
+
+        #inputOutput {
+            text-align: center;
+        }
+
+        #inputOutput .section {
+            margin-top: 1.6em;
+        }
+
+        #inputSection {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: inline-block;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 5px 10px;
+            background-color: #c042ad;
+            color: rgb(0, 0, 0);
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        #outputSection {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        #outputLabel {
+            font-weight: bold;
+            align-items: center;
+            margin-right: 5px;
+        }
+
+        #output {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function palindrome(str) {
+
+        // Remove spaces, punctiation, from str, and convert to lower
+        let cleanedStr = str.replace(/\s+/g, '').replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+
+        // Check if palindrome
+        // Convert str to array
+        let cleanedArr = cleanedStr.split('');
+
+        // Reverse array
+        let reversedArr = [];
+        for (let i = cleanedArr.length - 1; i >= 0; i--) {
+            reversedArr.push(cleanedArr[i])
+        }
+
+        // Convert array back to str
+        let reveresdStr = reversedArr.join('');
+
+        // Compare cleaned str and cleaned reversedStr & return result
+        return cleanedStr === reveresdStr;
+        }
+
+        function handleFormSubmit() {
+            const input = document.getElementById('inputText').value;
+            const result = palindrome(input);
+            document.getElementById('output').textContent = result;
+        }
+    </script>
+</head>
+<body>
+    <h1>Jake's Palindrome Checker</h1>
+        <div class="main">
+            <div id="codeDisplay" class="section">
+                <h1>My Code Solution:</h1>
+                <code>
+                    <pre>
+            function palindrome(str) {
+
+                // Remove spaces, punctiation, from str, and convert to lower
+                let cleanedStr = str.replace(/\s+/g, '').replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+        
+                // Check if palindrome
+                // Convert str to array
+                let cleanedArr = cleanedStr.split('');
+        
+                // Reverse array
+                let reversedArr = [];
+                for (let i = cleanedArr.length - 1; i >= 0; i--) {
+                    reversedArr.push(cleanedArr[i])
+                }
+        
+                // Convert array back to str
+                let reveresdStr = reversedArr.join('');
+        
+                // Compare cleaned str and cleaned reversedStr & return result
+                return cleanedStr === reveresdStr;
+            }
+                    </pre>
+                </code>
+            </div>
+
+        <div id="examples" class="section">
+            <h2>Example Tests to Check:</h2>
+            <p><b>Test:</b> "not a palindrome" | <b>Expected Output</b> = False</p>
+            <p><b>Test:</b> "A man, a plan, a canal. Panama" | <b>Expected Output</b> = True</p>
+            <p><b>Test:</b> "never odd or even" | <b>Expected Output</b> = True</p>
+            <p><b>Test:</b> "nope" | <b>Expected Output</b> = False</p>
+        </div>
+
+        <div id="inputOutput" class="section">
+            <div id="inputSection">
+                <label for="inputText">Enter text to check:</label>
+                <input type="text" id="inputText">
+                <button onclick="handleFormSubmit()">Check</button>
+            </div>
+
+            <div id="outputSection">
+                <p id="outputLabel">Result:</p>
+                <div id="output"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
