@@ -4,7 +4,8 @@
     <title>Jake's ROT13 Cipher Decoder</title>
     <style>
         body {
-            background-color: #dcdcdc;
+            font-family: Arial, sans-serif;
+            background-color: #8ede0d;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -15,20 +16,30 @@
         }
 
         h1, h2 {
+            color: #333;
+            font-size: 24px;
             text-align: center;
-            margin-bottom: 0.25em;
+            margin-bottom: 5px;
         }
 
         h2 {
-            margin-bottom: 0.25em;
+            margin-bottom: 5px;
         }
 
+        .main {
+            background-color: #fdfdfd;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 100%;            
+            display: block;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
 
         .section {
-            background-color: #f4f4f4;
+            background-color: #fdfdfd;
             border: 1px solid #ddd;
+            border-radius: 5px;
             color: #666;
-            font-family: monospace;
             font-size: 15px;
             line-height: 1.2;
             margin-bottom: 0.5em;
@@ -71,8 +82,8 @@
 
         button {
             padding: 5px 10px;
-            background-color: #4CAF50;
-            color: white;
+            background-color: #8ede0d;
+            color: rgb(0, 0, 0);
             border: none;
             cursor: pointer;
             font-size: 14px;
@@ -81,11 +92,14 @@
         #outputSection {
             display: flex;
             align-items: center;
+            justify-content: center;
             margin-top: 10px;
+            text-align: center;
         }
 
         #outputLabel {
             font-weight: bold;
+            align-items: center;
             margin-right: 5px;
         }
 
@@ -125,53 +139,56 @@
 </head>
 <body>
     <h1>Jake's ROT13 Cipher Decoder</h1>
-    <h1>My Code Solution:</h1>
-    <div id="codeDisplay" class="section">
-        <pre>
-            function rot13(str) {
-                // Str to hold decoded cipher
-                let decoded = "";
+        <div class="main">
+            <div id="codeDisplay" class="section">
+                <h1>My Code Solution:</h1>
+                <code>
+                    <pre>
+                        function rot13(str) {
+                            // Str to hold decoded cipher
+                            let decoded = "";
+                        
+                            // Loop thru passed in str
+                            for (let i = 0; i < str.length; i++) {
+                                // Get current char code
+                                let charCode = str.charCodeAt(i);
+                        
+                                // Convert if an uppercase char
+                                if (charCode >= 65 && charCode <= 90) {
+                                    charCode = ((charCode - 65 + 13) % 26) + 65;
+                                }
+                        
+                                // Otherwise keep the same and append to decoded str
+                                decoded += String.fromCharCode(charCode);
+                            }
+                        
+                            // Return decoded str
+                            return decoded;
+                        }
+                    </pre>
+                </code>
+            </div>
 
-                // Loop thru passed in str
-                for (let i = 0; i < str.length; i++) {
-                    // Get current char code
-                    let charCode = str.charCodeAt(i);
-
-                    // Convert if an uppercase char
-                    if (charCode >= 65 && charCode <= 90) {
-                        charCode = ((charCode - 65 + 13) % 26) + 65;
-                    }
-
-                    // Otherwise keep the same and append to decoded str
-                    decoded += String.fromCharCode(charCode);
-                }
-
-                // Return decoded str
-                return decoded;
-            }
-        </pre>
-    </div>
-
-    <div id="examples" class="section">
-        <h2>Example Ciphers to Decode:</h2>
-        <p>SERR PBQR PNZC - Expected Output: FREE CODE CAMP</p>
-        <p>SERR CVMMN! - Expected Output: FREE PIZZA!</p>
-        <p>GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT. - Expected Output: THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.</p>
-    </div>
-
-    <div id="inputOutput" class="section">
-        <div id="inputSection">
-            <label for="inputText">Enter text to decode:</label>
-            <input type="text" id="inputText">
-            <button onclick="handleFormSubmit()">Decode</button>
+        <div id="examples" class="section">
+            <h2>Example Ciphers to Decode:</h2>
+            <p>SERR PBQR PNZC - Expected Output: FREE CODE CAMP</p>
+            <p>SERR CVMMN! - Expected Output: FREE PIZZA!</p>
+            <p>GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT. - Expected Output: THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.</p>
         </div>
 
-        <div id="outputSection">
-            <p id="outputLabel">Decoded text:</p>
-            <div id="output"></div>
+        <div id="inputOutput" class="section">
+            <div id="inputSection">
+                <label for="inputText">Enter text to decode:</label>
+                <input type="text" id="inputText">
+                <button onclick="handleFormSubmit()">Decode</button>
+            </div>
+
+            <div id="outputSection">
+                <p id="outputLabel">Decoded text:</p>
+                <div id="output"></div>
+            </div>
         </div>
     </div>
-
 </body>
 </html>
 
