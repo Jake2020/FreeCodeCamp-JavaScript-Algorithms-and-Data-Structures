@@ -11,7 +11,7 @@ GitHub Pages Link (for my reference): https://jake2020.github.io/FreeCodeCamp-Ja
 2. [Roman Numeral Converter](https://jake2020.github.io/FreeCodeCamp-JavaScript-Algorithms-and-Data-Structures/RomanNumeralConvertor.html)
 3. [Caesars Cipher](https://jake2020.github.io/FreeCodeCamp-JavaScript-Algorithms-and-Data-Structures/CaesarsCipher.html)
 4. Telephone Number Validator
-5. Cash Register
+5. [Cash Register](https://jake2020.github.io/FreeCodeCamp-JavaScript-Algorithms-and-Data-Structures/CashRegister.html)
 
 ## Project 1: [Palindrome Checker](https://jake2020.github.io/FreeCodeCamp-JavaScript-Algorithms-and-Data-Structures/PalindromeChecker.html)
 *Note: Example text is provided but any input can be checked*
@@ -27,18 +27,18 @@ We'll also pass strings with special symbols, such as 2A3*3a2, 2A3 3a2, and 2_A3
 Expected Outputs:
 
 - palindrome("eye") should return a boolean.
-- Waiting:palindrome("eye") should return true.
-- Waiting:palindrome("_eye") should return true.
-- Waiting:palindrome("race car") should return true.
-- Waiting:palindrome("not a palindrome") should return false.
-- Waiting:palindrome("A man, a plan, a canal. Panama") should return true.
-- Waiting:palindrome("never odd or even") should return true.
-- Waiting:palindrome("nope") should return false.
-- Waiting:palindrome("almostomla") should return false.
-- Waiting:palindrome("My age is 0, 0 si ega ym.") should return true.
-- Waiting:palindrome("1 eye for of 1 eye.") should return false.
-- Waiting:palindrome("0_0 (: /-\ :) 0-0") should return true.
-- Waiting:palindrome("five|\_/|four") should return false.
+- palindrome("eye") should return true.
+- palindrome("_eye") should return true.
+- palindrome("race car") should return true.
+- palindrome("not a palindrome") should return false.
+- palindrome("A man, a plan, a canal. Panama") should return true.
+- palindrome("never odd or even") should return true.
+- palindrome("nope") should return false.
+- palindrome("almostomla") should return false.
+- palindrome("My age is 0, 0 si ega ym.") should return true.
+- palindrome("1 eye for of 1 eye.") should return false.
+- palindrome("0_0 (: /-\ :) 0-0") should return true.
+- palindrome("five|\_/|four") should return false.
 
 ## Project 2: [Roman Numeral Converter](https://jake2020.github.io/FreeCodeCamp-JavaScript-Algorithms-and-Data-Structures/RomanNumeralConvertor.html)
 
@@ -107,10 +107,42 @@ All letters will be uppercase. Do not transform any non-alphabetic character (i.
 Expected Outputs:
 
 - rot13("SERR PBQR PNZC") should decode to the string FREE CODE CAMP
-- Waiting:rot13("SERR CVMMN!") should decode to the string FREE PIZZA!
-- Waiting:rot13("SERR YBIR?") should decode to the string FREE LOVE?
-- Waiting:rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.") should decode to the string THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.
+- rot13("SERR CVMMN!") should decode to the string FREE PIZZA!
+- rot13("SERR YBIR?") should decode to the string FREE LOVE?
+- rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.") should decode to the string THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.
 
 ## Project 4: Coming soon
 
-## Project 5: Coming soon
+## Project 5: [Cash Register](https://jake2020.github.io/FreeCodeCamp-JavaScript-Algorithms-and-Data-Structures/CashRegister.html)
+*Note: This project has really awkward test inputs including long arrays so isn't particurarly interactive to host on a webpage, so Instead I have just hosted my code solution.*
+
+Problem Description:
+
+Design a cash register drawer function checkCashRegister() that accepts purchase price as the first argument (price), payment as the second argument (cash), and cash-in-drawer (cid) as the third argument.
+cid is a 2D array listing available currency.
+The checkCashRegister() function should always return an object with a status key and a change key.
+Return {status: "INSUFFICIENT_FUNDS", change: []} if cash-in-drawer is less than the change due, or if you cannot return the exact change.
+Return {status: "CLOSED", change: [...]} with cash-in-drawer as the value for the key change if it is equal to the change due.
+Otherwise, return {status: "OPEN", change: [...]}, with the change due in coins and bills, sorted in highest to lowest order, as the value of the change key.
+
+See below for an example of a cash-in-drawer array:
+[
+  ["PENNY", 1.01],
+  ["NICKEL", 2.05],
+  ["DIME", 3.1],
+  ["QUARTER", 4.25],
+  ["ONE", 90],
+  ["FIVE", 55],
+  ["TEN", 20],
+  ["TWENTY", 60],
+  ["ONE HUNDRED", 100]
+]
+
+Expected Outputs:
+
+- checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]) should return an object.
+- checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]) should return {status: "OPEN", change: [["QUARTER", 0.5]]}.
+- checkCashRegister(3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]) should return {status: "OPEN", change: [["TWENTY", 60], ["TEN", 20], ["FIVE", 15], ["ONE", 1], ["QUARTER", 0.5], ["DIME", 0.2], ["PENNY", 0.04]]}.
+- checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]) should return {status: "INSUFFICIENT_FUNDS", change: []}.
+- checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 1], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]) should return {status: "INSUFFICIENT_FUNDS", change: []}.
+- checkCashRegister(19.5, 20, [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]) should return {status: "CLOSED", change: [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]}.
