@@ -1,4 +1,4 @@
-# FreeCodeCamp-JavaScript-Algorithms-and-Data-Structures
+# [FreeCodeCamp-JavaScript-Algorithms-and-Data-Structures](https://jake2020.github.io/FreeCodeCamp-JavaScript-Algorithms-and-Data-Structures/)
 A repository to host my FreeCodeCamp 'JavaScript Algorithms and Data Structures' projects and certification.
 
 Each project has been hosted on GitHub Pages as a simple interactive and responsive webpage made up of HTML, CSS, JavaScript, and Bootstrap, so the user can test the code as well as read it. Please enjoy my very bright, very mediocre, front end designs.
